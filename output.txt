@@ -1,0 +1,203 @@
+
+
+
+ Output
+
+Line Operation b1;
+Action Taken: Add transaction to transaction table, Added TransactionId is 1
+Line Operation r1 (Y);
+Action Taken: Add dataitem entry into lock table, Lock Status updated to 'Read Lock', Added dataitem is: Y, Added dataitem to transaction table in t_dataitem['Y'], TransactionId: 1
+Line Operation w1 (Y);
+Action Taken: Updating 'Read Lock' to 'Write Lock', , Modified dataitem is: Y, TransactionId: 1
+Line Operation r1 (Z);
+Action Taken: Add dataitem entry into lock table, Lock Status updated to 'Read Lock', Added dataitem is: Z, Added dataitem to transaction table in t_dataitem['Y', 'Z'], TransactionId: 1
+Line Operation b2;
+Action Taken: Add transaction to transaction table, Added TransactionId is 2
+Line Operation r2 (X);
+Action Taken: Add dataitem entry into lock table, Lock Status updated to 'Read Lock', Added dataitem is: X, Added dataitem to transaction table in t_dataitem['X'], TransactionId: 2
+Line Operation w2 (X);
+Action Taken: Updating 'Read Lock' to 'Write Lock', , Modified dataitem is: X, TransactionId: 2
+Line Operation w1 (Z);
+Action Taken: Updating 'Read Lock' to 'Write Lock', , Modified dataitem is: Z, TransactionId: 1
+Line Operation e1;
+Action Taken: End transaction, status updated to committed, TransactionId is 1, Unlock and release dataitems: ['Y', 'Z']
+Line Operation r2 (Y);
+Action Taken: Lock Status updated as 'Read lock' in the lock table , Modified dataitem is: Y, TransactionId: 2
+Line Operation b3;
+Action Taken: Add transaction to transaction table, Added TransactionId is 3
+Line Operation r3 (Z);
+Action Taken: Lock Status updated as 'Read lock' in the lock table , Modified dataitem is: Z, TransactionId: 3
+Line Operation w3 (Z);	
+Action Taken: Updating 'Read Lock' to 'Write Lock', , Modified dataitem is: Z, TransactionId: 3
+Line Operation w2 (Y);
+Action Taken: Updating 'Read Lock' to 'Write Lock', , Modified dataitem is: Y, TransactionId: 2
+Line Operation e2;
+Action Taken: End transaction, status updated to committed, TransactionId is 2, Unlock and release dataitems: ['X', 'Y']
+Line Operation r3 (X);
+Action Taken: Lock Status updated as 'Read lock' in the lock table , Modified dataitem is: X, TransactionId: 3
+Line Operation w3 (X);
+Action Taken: Updating 'Read Lock' to 'Write Lock', , Modified dataitem is: X, TransactionId: 3
+Line Operation e3;
+Action Taken: End transaction, status updated to committed, TransactionId is 3, Unlock and release dataitems: ['Z', 'X']
+
+
+
+ Output
+
+Line Operation b1;
+Action Taken: Add transaction to transaction table, Added TransactionId is 1
+Line Operation r1 (Y);
+Action Taken: Add dataitem entry into lock table, Lock Status updated to 'Read Lock', Added dataitem is: Y, Added dataitem to transaction table in t_dataitem['Y'], TransactionId: 1
+Line Operation w1 (Y);
+Action Taken: Updating 'Read Lock' to 'Write Lock', , Modified dataitem is: Y, TransactionId: 1
+Line Operation r1 (Z);
+Action Taken: Add dataitem entry into lock table, Lock Status updated to 'Read Lock', Added dataitem is: Z, Added dataitem to transaction table in t_dataitem['Y', 'Z'], TransactionId: 1
+Line Operation b2;
+Action Taken: Add transaction to transaction table, Added TransactionId is 2
+Line Operation r2 (X);
+Action Taken: Add dataitem entry into lock table, Lock Status updated to 'Read Lock', Added dataitem is: X, Added dataitem to transaction table in t_dataitem['X'], TransactionId: 2
+Line Operation w2 (X);
+Action Taken: Updating 'Read Lock' to 'Write Lock', , Modified dataitem is: X, TransactionId: 2
+Line Operation w1 (Z);
+Action Taken: Updating 'Read Lock' to 'Write Lock', , Modified dataitem is: Z, TransactionId: 1
+Line Operation r2 (Y);
+Action Taken: Aborting Transaction , Ignore subsequent operations, TransactionId: 2
+Line Operation e1;
+Action Taken: End transaction, status updated to committed, TransactionId is 1, Unlock and release dataitems: ['Y', 'Z']
+Line Operation b3;
+Action Taken: Add transaction to transaction table, Added TransactionId is 3
+Line Operation r3 (Z);
+Action Taken: Lock Status updated as 'Read lock' in the lock table , Modified dataitem is: Z, TransactionId: 3
+Line Operation w3 (Z);	
+Action Taken: Updating 'Read Lock' to 'Write Lock', , Modified dataitem is: Z, TransactionId: 3
+Line Operation w2 (Y);
+Action Taken: transaction already aborted, status updated to abort, TransactionId is 2
+Line Operation e2;
+Action Taken: Transaction already aborted, TransactionId state is: abort, TransactionId is 2
+Line Operation r3 (X);
+Action Taken: Lock Status updated as 'Read lock' in the lock table , Modified dataitem is: X, TransactionId: 3
+Line Operation w3 (X);
+Action Taken: Updating 'Read Lock' to 'Write Lock', , Modified dataitem is: X, TransactionId: 3
+Line Operation e3;
+Action Taken: End transaction, status updated to committed, TransactionId is 3, Unlock and release dataitems: ['Z', 'X']
+
+
+
+ Output
+
+Line Operation b1;
+Action Taken: Add transaction to transaction table, Added TransactionId is 1
+Line Operation r1 (Y);
+Action Taken: Add dataitem entry into lock table, Lock Status updated to 'Read Lock', Added dataitem is: Y, Added dataitem to transaction table in t_dataitem['Y'], TransactionId: 1
+Line Operation w1 (Y);
+Action Taken: Updating 'Read Lock' to 'Write Lock', , Modified dataitem is: Y, TransactionId: 1
+Line Operation r1 (Z);
+Action Taken: Add dataitem entry into lock table, Lock Status updated to 'Read Lock', Added dataitem is: Z, Added dataitem to transaction table in t_dataitem['Y', 'Z'], TransactionId: 1
+Line Operation b2;
+Action Taken: Add transaction to transaction table, Added TransactionId is 2
+Line Operation r2 (X);
+Action Taken: Add dataitem entry into lock table, Lock Status updated to 'Read Lock', Added dataitem is: X, Added dataitem to transaction table in t_dataitem['X'], TransactionId: 2
+Line Operation w2 (X);
+Action Taken: Updating 'Read Lock' to 'Write Lock', , Modified dataitem is: X, TransactionId: 2
+Line Operation w1 (Z);
+Action Taken: Updating 'Read Lock' to 'Write Lock', , Modified dataitem is: Z, TransactionId: 1
+Line Operation r2 (Y);
+Action Taken: Aborting Transaction , Ignore subsequent operations, TransactionId: 2
+Line Operation b3;
+Action Taken: Add transaction to transaction table, Added TransactionId is 3
+Line Operation r3 (Z);
+Action Taken: Aborting Transaction , Ignore subsequent operations, TransactionId: 3
+Line Operation e1;
+Action Taken: End transaction, status updated to committed, TransactionId is 1, Unlock and release dataitems: ['Y', 'Z']
+Line Operation w3 (Z);	
+Action Taken: transaction already aborted, status updated to abort, TransactionId is 3
+Line Operation w2 (Y);
+Action Taken: transaction already aborted, status updated to abort, TransactionId is 2
+Line Operation e2;
+Action Taken: Transaction already aborted, TransactionId state is: abort, TransactionId is 2
+Line Operation r3 (X);
+Action Taken: transaction already aborted, status updated to abort, TransactionId is 3
+Line Operation w3 (X);
+Action Taken: transaction already aborted, status updated to abort, TransactionId is 3
+Line Operation e3;
+Action Taken: Transaction already aborted, TransactionId state is: abort, TransactionId is 3
+
+
+
+ Output
+
+Line Operation b1;
+Action Taken: Add transaction to transaction table, Added TransactionId is 1
+Line Operation r1 (Y);
+Action Taken: Add dataitem entry into lock table, Lock Status updated to 'Read Lock', Added dataitem is: Y, Added dataitem to transaction table in t_dataitem['Y'], TransactionId: 1
+Line Operation w1 (Y);
+Action Taken: Updating 'Read Lock' to 'Write Lock', , Modified dataitem is: Y, TransactionId: 1
+Line Operation r1 (Z);
+Action Taken: Add dataitem entry into lock table, Lock Status updated to 'Read Lock', Added dataitem is: Z, Added dataitem to transaction table in t_dataitem['Y', 'Z'], TransactionId: 1
+Line Operation b2;
+Action Taken: Add transaction to transaction table, Added TransactionId is 2
+Line Operation r2 (Y);
+Action Taken: Aborting Transaction , Ignore subsequent operations, TransactionId: 2
+Line Operation b3;
+Action Taken: Add transaction to transaction table, Added TransactionId is 3
+Line Operation r3 (Z);
+Action Taken: Added 'Read Lock' for the transactions for dataitem: Z, TransactionId: 3
+Line Operation w1 (Z);
+Action Taken: Transaction wants to Write datitem but has , Multiple Transaction with 'Read Lock'. DataItem: Z, TransactionId: 1
+Line Operation w1 (Z);
+Action Taken: Transaction gets Blocked, and its get added in Waiting Operations list as: [{'operation': 'w', 'dataitem': 'Z'}], TransactionId: 1
+Line Operation w2 (Y);
+Action Taken: transaction already aborted, status updated to abort, TransactionId is 2
+Line Operation r2 (X);
+Action Taken: transaction already aborted, status updated to abort, TransactionId is 2
+Line Operation e1;	
+Action Taken: Transaction already blocked, e1 is added to waiting operations list, Waiting Operations list[{'operation': 'w', 'dataitem': 'Z'}, {'operation': 'e', 'dataitem': 'N.A.'}], TransactionId is 1
+Line Operation e3;
+Action Taken: End transaction, status updated to committed, TransactionId is 3, Unlock and release dataitems: ['Z']
+e1 Action Taken: Transaction gets committed, Unlock and release dataitems: ['Y', 'Z']
+Line Operation w2 (X);
+Action Taken: transaction already aborted, status updated to abort, TransactionId is 2
+Line Operation e2;
+Action Taken: Transaction already aborted, TransactionId state is: abort, TransactionId is 2
+
+
+
+ Output
+
+Line Operation b1;
+Action Taken: Add transaction to transaction table, Added TransactionId is 1
+Line Operation r1 (Y);
+Action Taken: Add dataitem entry into lock table, Lock Status updated to 'Read Lock', Added dataitem is: Y, Added dataitem to transaction table in t_dataitem['Y'], TransactionId: 1
+Line Operation w1 (Y);
+Action Taken: Updating 'Read Lock' to 'Write Lock', , Modified dataitem is: Y, TransactionId: 1
+Line Operation r1 (Z);
+Action Taken: Add dataitem entry into lock table, Lock Status updated to 'Read Lock', Added dataitem is: Z, Added dataitem to transaction table in t_dataitem['Y', 'Z'], TransactionId: 1
+Line Operation b2;
+Action Taken: Add transaction to transaction table, Added TransactionId is 2
+Line Operation r2 (Y);
+Action Taken: Aborting Transaction , Ignore subsequent operations, TransactionId: 2
+Line Operation b3;
+Action Taken: Add transaction to transaction table, Added TransactionId is 3
+Line Operation r3 (Z);
+Action Taken: Added 'Read Lock' for the transactions for dataitem: Z, TransactionId: 3
+Line Operation w1 (Z);
+Action Taken: Transaction wants to Write datitem but has , Multiple Transaction with 'Read Lock'. DataItem: Z, TransactionId: 1
+Line Operation w1 (Z);
+Action Taken: Transaction gets Blocked, and its get added in Waiting Operations list as: [{'operation': 'w', 'dataitem': 'Z'}], TransactionId: 1
+Line Operation w2 (Y);
+Action Taken: transaction already aborted, status updated to abort, TransactionId is 2
+Line Operation r2 (X);
+Action Taken: transaction already aborted, status updated to abort, TransactionId is 2
+Line Operation e1;
+Action Taken: Transaction already blocked, e1 is added to waiting operations list, Waiting Operations list[{'operation': 'w', 'dataitem': 'Z'}, {'operation': 'e', 'dataitem': 'N.A.'}], TransactionId is 1
+Line Operation w3 (Z);	
+Action Taken: Transaction wants to Write datitem but has , Multiple Transaction with 'Read Lock'. DataItem: Z, TransactionId: 3
+Line Operation w3 (Z);	
+Action Taken: Aborting Transaction , Ignore subsequent operations, TransactionId: 3
+e1 Action Taken: Transaction gets committed, Unlock and release dataitems: ['Y', 'Z']
+Line Operation e3;
+Action Taken: Transaction already aborted, TransactionId state is: abort, TransactionId is 3
+Line Operation w2 (X);
+Action Taken: transaction already aborted, status updated to abort, TransactionId is 2
+Line Operation e2;
+Action Taken: Transaction already aborted, TransactionId state is: abort, TransactionId is 2
