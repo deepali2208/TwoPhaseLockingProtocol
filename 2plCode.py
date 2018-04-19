@@ -1,8 +1,3 @@
-#Project1- Part2 for Concurrency Control
-#Sadhana Singh - 1001460273
-#Deepali Kumar - 1001429496
-
-#Notes:
 #Read_Lock equivalent to "Shared Lock"
 #Write_Lock equivalent to "Exclusive Lock"
 
